@@ -1,0 +1,256 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Hacker-style font */
+    background-color: #0A0A0A; /* Dark background */
+    color: #00FF00; /* Green text */
+}
+
+/* Full page loader */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0A0A0A; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to cover all content */
+}
+
+.page-loader-inner {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    border-radius: 50%;
+    perspective: 800px;
+}
+
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #00FF00;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #00FF00;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #00FF00;
+}
+
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #0A0A0A; /* Dark background */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #00FF00; /* Green border */
+}
+
+.navbar a {
+    color: #00FF00; /* Green text */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #00FF00;
+}
+
+/* Products Grid */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    background-color: #0A0A0A;
+    border: 2px solid #00FF00;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 0 15px #00FF00;
+}
+
+/* Product Image Styling */
+.product img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.product:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Loader for individual products */
+.loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+}
+
+.loader .inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #00FF00;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding-top: 100px;
+}
+
+.modal-content {
+    background: #0A0A0A 0.2;
+    backdrop-filter: blur(4px);
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #00FF00;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+.modal-content h2, .modal-content p {
+    color: #00FF00;
+}
+
+/* Close Button */
+.close {
+    color: #00FF00;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    background-color: #00FF00;
+    color: #0A0A0A;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #00cc00;
+}
+
+/* Scrollbar styling for modal (if content overflows) */
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #00FF00;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
+.cut-text {
+    text-decoration: line-through; /* This applies the cut effect */
+}
+

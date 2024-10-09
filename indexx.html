@@ -1,0 +1,125 @@
+<!-- Shop Hacker Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underground IFStore</title>
+    <link rel="stylesheet" href="hacker.css">
+    <link rel="icon" type="image/gif" href="images/logo.gif">
+    <style>
+        /* Add this CSS to your existing CSS */
+        body {
+            /* Other styles... */
+            user-select: none; /* Prevent text selection */
+        }
+
+        .product-image {
+            pointer-events: none; /* Prevent right-click on images */
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;"> <!-- Disable right-click menu -->
+    <!-- Full-page loader -->
+    <div id="page-loader">
+        <div class="page-loader-inner">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+
+    <div class="container">
+        <h1 class="cut-text">Welcome to IFShop</h1>
+        <div class="products">
+            <div class="product" onclick="openProductDetails('USB Stick', '€5.00', 'images/test4.jpg', 'USB Stick descrizione dettagliata.')">
+                <div class="image-container">
+                    <img src="images/test4.jpg" alt="USB Stick" class="product-image">
+                    <div class="loader">
+                        <div class="inner one"></div>
+                        <div class="inner two"></div>
+                        <div class="inner three"></div>
+                    </div>
+                </div>
+                <h2>USB Stick</h2>
+                <p>Prezzo: €5.00</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Grinder', '€17.00', 'images/Grinder.jpg', 'A beatifull Grinder.')">
+                <div class="image-container">
+                    <img src="images/grinder.jpg" alt="Grinder" class="product-image">
+                    <div class="loader">
+                        <div class="inner one"></div>
+                        <div class="inner two"></div>
+                        <div class="inner three"></div>
+                    </div>
+                </div>
+                <h2>Grinder</h2>
+                <p>Prezzo: €17.00</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <img id="modal-product-image" src="" alt="">
+            <p id="modal-product-price"></p>
+            <p id="modal-product-description"></p>
+
+            <div class="contact-options">
+                <button onclick="window.open('https://www.instagram.com/_.ifshop._/')">
+                    <img src="" alt="Instagram" class="contact-logo"> Instagram
+                </button>
+                <button onclick="window.open('https://t.me/IFShopTelegram')">
+                    <img src="" alt="Telegram" class="contact-logo"> Telegram
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openProductDetails(name, price, image, description) {
+            document.getElementById("modal-product-name").innerText = name;
+            document.getElementById("modal-product-price").innerText = price;
+            document.getElementById("modal-product-image").src = image;
+            document.getElementById("modal-product-description").innerText = description;
+            document.getElementById("product-modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("product-modal").style.display = "none";
+        }
+
+        // Prevent text copying
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Copying is not allowed on this site!');
+        });
+
+        // Loader for images
+        document.querySelectorAll('.product-image').forEach(img => {
+            const loader = img.nextElementSibling;
+
+            loader.style.display = 'block';
+
+            img.onload = () => {
+                loader.style.display = 'none';
+            };
+
+            img.onerror = () => {
+                loader.style.display = 'none';
+            };
+        });
+
+        // Full page loader
+        window.addEventListener('load', () => {
+            document.getElementById('page-loader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

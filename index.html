@@ -1,0 +1,76 @@
+<!-- Shop Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/gif" href="images/home.gif">
+</head>
+<body>
+    <div class="navbar">
+        <a href="indexx.html" class="home-button">Home</a>
+    </div>
+    <div class="container">
+        <h1>Welcome to IFShop</h1>
+        <div class="products">
+            <div class="product" onclick="openProductDetails('Accendino 1', '€1.50', 'images/accendino1.jpg', 'Accendino 1 descrizione dettagliata.')">
+                <img src="images/test1.jpg" alt="Accendino 1">
+                <h2>Accendino 1</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Accendino 2', '€1.50', 'images/accendino2.jpg', 'Accendino 2 descrizione dettagliata.')">
+                <img src="images/test2.jpg" alt="Accendino 2">
+                <h2>Accendino 2</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Accendino 3', '€1.50', 'images/accendino3.jpg', 'Accendino 3 descrizione dettagliata.')">
+                <img src="images/test3.jpg" alt="Accendino 3">
+                <h2>Accendino 3</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Accendino 1', '€1.50', 'images/accendino1.jpg', 'Accendino 1 descrizione dettagliata.')">
+                <img src="images/test1.jpg" alt="Accendino 1">
+                <h2>Accendino 1</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Accendino 2', '€1.50', 'images/accendino2.jpg', 'Accendino 2 descrizione dettagliata.')">
+                <img src="images/test2.jpg" alt="Accendino 2">
+                <h2>Accendino 2</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+            <div class="product" onclick="openProductDetails('Accendino 3', '€1.50', 'images/accendino3.jpg', 'Accendino 3 descrizione dettagliata.')">
+                <img src="images/test3.jpg" alt="Accendino 3">
+                <h2>Accendino 3</h2>
+                <p>Prezzo: €1.50</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <img id="modal-product-image" src="" alt="">
+            <p id="modal-product-price"></p>
+            <p id="modal-product-description"></p>
+            <button onclick="window.open('https://www.instagram.com/_.ifshop._/')">Compra</button>
+        </div>
+    </div>
+
+    <script>
+        function openProductDetails(name, price, image, description) {
+            document.getElementById("modal-product-name").innerText = name;
+            document.getElementById("modal-product-price").innerText = price;
+            document.getElementById("modal-product-image").src = image;
+            document.getElementById("modal-product-description").innerText = description;
+            document.getElementById("product-modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("product-modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

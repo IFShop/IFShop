@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheatSheet - Commands for Windows & Linux</title>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <script src="cheatsheet.js" defer></script>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search for commands..." oninput="filterCommands()">
+    </div>
+
+    <h1>CheatSheet - Commands for Windows & Linux</h1>
+
+    <div class="cheatsheet">
+        <div class="category">
+            <h2 onclick="toggleCategory('windows-file-management')">Windows - File Management</h2>
+            <div id="windows-file-management" class="command-list">
+                <div class="command">
+                    <span>del</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Deletes a file at the specified path. Example: <code>del C:\\path\\to\\file.txt</code></div>
+                </div>
+                <div class="command">
+                    <span>move</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Moves a file from one location to another. Example: <code>move C:\\path\\to\\file.txt D:\\destination</code></div>
+                </div>
+                <div class="command">
+                    <span>copy</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Copies a file from one location to another. Example: <code>copy C:\\path\\to\\file.txt D:\\destination</code></div>
+                </div>
+                <div class="command">
+                    <span>mkdir</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Creates a new directory (folder). Example: <code>mkdir NewFolder</code></div>
+                </div>
+                <div class="command">
+                    <span>rmdir</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Removes a directory at the specified path. Example: <code>rmdir C:\\path\\to\\folder</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 onclick="toggleCategory('linux-file-management')">Linux - File Management</h2>
+            <div id="linux-file-management" class="command-list">
+                <div class="command">
+                    <span>rm</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Removes a file at the specified path. Example: <code>rm /path/to/file</code></div>
+                </div>
+                <div class="command">
+                    <span>mv</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Moves a file from one location to another. Example: <code>mv /path/to/file /new/location</code></div>
+                </div>
+                <div class="command">
+                    <span>cp</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Copies a file from one location to another. Example: <code>cp /path/to/file /new/location</code></div>
+                </div>
+                <div class="command">
+                    <span>mkdir</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Creates a new directory (folder). Example: <code>mkdir NewFolder</code></div>
+                </div>
+                <div class="command">
+                    <span>rmdir</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Removes a directory at the specified path. Example: <code>rmdir /path/to/folder</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Commands -->
+        <div class="category">
+            <h2 onclick="toggleCategory('windows-networking')">Windows - Networking</h2>
+            <div id="windows-networking" class="command-list">
+                <div class="command">
+                    <span>ipconfig</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays network configuration information. Example: <code>ipconfig /all</code></div>
+                </div>
+                <div class="command">
+                    <span>ping</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Tests connectivity to a network host. Example: <code>ping www.google.com</code></div>
+                </div>
+                <div class="command">
+                    <span>netstat</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays active network connections. Example: <code>netstat -an</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 onclick="toggleCategory('linux-networking')">Linux - Networking</h2>
+            <div id="linux-networking" class="command-list">
+                <div class="command">
+                    <span>ifconfig</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays network interface configuration. Example: <code>ifconfig</code></div>
+                </div>
+                <div class="command">
+                    <span>ping</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Tests connectivity to a network host. Example: <code>ping www.google.com</code></div>
+                </div>
+                <div class="command">
+                    <span>netstat</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays active network connections. Example: <code>netstat -an</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Added New Categories -->
+        <div class="category">
+            <h2 onclick="toggleCategory('windows-system')">Windows - System Information</h2>
+            <div id="windows-system" class="command-list">
+                <div class="command">
+                    <span>systeminfo</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays detailed system information. Example: <code>systeminfo</code></div>
+                </div>
+                <div class="command">
+                    <span>tasklist</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Lists all running tasks. Example: <code>tasklist</code></div>
+                </div>
+                <div class="command">
+                    <span>taskkill</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Kills a running task. Example: <code>taskkill /F /PID 1234</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 onclick="toggleCategory('linux-system')">Linux - System Information</h2>
+            <div id="linux-system" class="command-list">
+                <div class="command">
+                    <span>uname -a</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays system information. Example: <code>uname -a</code></div>
+                </div>
+                <div class="command">
+                    <span>top</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Displays real-time system processes. Example: <code>top</code></div>
+                </div>
+                <div class="command">
+                    <span>kill</span>
+                    <span class="example-link" onclick="toggleExample(this)">Show example</span>
+                    <div class="example">Terminates a process by PID. Example: <code>kill -9 1234</code></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
